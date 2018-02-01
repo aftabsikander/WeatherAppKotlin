@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.51'
+    ext.kotlin_version = '1.2.21'
 
     repositories {
         google()
@@ -28,20 +28,52 @@ task clean(type: Delete) {
 }
 
 ext {
-    supportLibVersion = '26.1.0'
+    supportLibVersion = '27.0.2'
     ankoLibVersion = '0.10.3'
     constraintLayoutVersion = "1.0.2"
+    retrofitVersion = '2.3.0'
+    okhttpVersion = '3.9.1'
+    glideVersion = '4.5.0'
+    glideProcessor = '4.5.0'
+    rxAndroidVersion = '2.0.1'
+    rxJavaVersion = '2.1.9'
 
     deps = [
             // Support libs
-            appcompatv7  : "com.android.support:appcompat-v7:$supportLibVersion",
-            supportCompat: "com.android.support:support-compat:$supportLibVersion",
-            supportdesign: "com.android.support:design:$supportLibVersion",
+            appcompatv7      : "com.android.support:appcompat-v7:$supportLibVersion",
+            supportCompat    : "com.android.support:support-compat:$supportLibVersion",
+            supportdesign    : "com.android.support:design:$supportLibVersion",
 
             // Constraint Layout
-            constraintLib: "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+            constraintLib    : "com.android.support.constraint:constraint-layout:" +
+                    "$constraintLayoutVersion",
 
             // Anko Commons
-            ankoCommons  : "org.jetbrains.anko:anko-commons:$ankoLibVersion"
+            ankoCommons      : "org.jetbrains.anko:anko-commons:$ankoLibVersion",
+
+            //Retrofit
+            retrofitBase     : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitLogger   : "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            retrofitAdapter  : "com.squareup.retrofit2:adapter-rxjava2:2.3.0",
+
+            //Json parser
+            gsonBase             : "com.google.code.gson:gson:2.8.2",
+
+            //Okhttp
+            okhttp           : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+
+            // Image Loader
+            glide            : "com.github.bumptech.glide:glide:$glideVersion",
+            glideProcessor   : "com.github.bumptech.glide:compiler:$glideProcessor",
+
+            //Logger
+            timber           : "com.jakewharton.timber:timber:4.6.0",
+
+            //Rx Java
+            rxAndroid        : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxJava           : "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+
     ]
 }
